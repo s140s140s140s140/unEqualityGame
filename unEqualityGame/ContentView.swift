@@ -69,7 +69,7 @@ struct Panels:View{
 struct Panel:View{
     var body:some View{
         ZStack {
-            
+            //hello
             
             /*
              Rectangle()
