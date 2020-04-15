@@ -13,53 +13,53 @@ extension Color {
     static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
 }
 
-struct Panels:View{
+enum PanelPattern{
+    case square1,square2,square3,square4,square5
+}
+
+
+struct Game:View{
     
     var body:some View{
+        Text("Game")
+    }
+}
+
+struct Panels:View{
+    static var panels:[[Panel]] = [[Panel]]()
+    init(){
+        var sqStrings:[String] = [String]()
+      
+            for i in 1...5{
+                sqStrings.append("\(i).square")
+            }
+            for i in 1...5{
+                sqStrings.append("\(i).square.fill")
+            }
+            sqStrings.append("square")
+            sqStrings.append("lessthan")
+            print(sqStrings)
+        
+        for y in 0..<9{
+            Panels.panels.append([Panel]())
+            for x in 0..<9{
+                Panels.panels[y].append(Panel(x: x, y: y))
+                Panels.panels[y][x].cnt = (x * 9 + y) % 9 + 1
+            }
+        }
+    }
+    
+    var body:some View{
+        
         VStack{
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
-                }
-            }
-            HStack{
-                ForEach(0..<9){x in
-                    Panel()
+            ForEach(0..<9){ y in
+                HStack{
+                    Spacer()
+                    ForEach(0..<9){x in
+                        Panels.panels[y][x]
+                        //Spacer()
+                    }
+                    Spacer()
                 }
             }
         }
@@ -67,45 +67,21 @@ struct Panels:View{
 }
 
 struct Panel:View{
+    var x:Int
+    var y:Int
+    var cnt:Int = 0
+    
+    
+    
+    
     var body:some View{
         ZStack {
-            //hello
-            
-            /*
-             Rectangle()
-             .fill(Color.offWhite)
-                .frame(maxWidth: 100, maxHeight: 100)
-             .cornerRadius(10)
-             .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-             .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-            .padding(-5)
-             */
-            
-            
-            Image(systemName: "1.square")
-                .frame(maxWidth: 300, maxHeight: 300)
-                //.rotationEffect(.init(radians: Double.pi/3))
+            Rectangle()
+                .foregroundColor(Color.offWhite)
+                .cornerRadius(5.0)
+            Image(systemName: "\(self.cnt).square")
                 .foregroundColor(Color.gray)
-                .font(.system(size: 30))
-                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-                .padding(-5.0)
-            
-            
-            /*
-             Image(systemName: "greaterthan")
-             .foregroundColor(Color.gray)
-             .font(.largeTitle)
-             .offset(x:-40)
-             */
-            //.frame(maxWidth: 300, maxHeight: 300)
-            /*
-             Text("5")
-             //.frame(maxWidth: 100, maxHeight: 100)
-                .font(.system(size: 10.0))
-             .foregroundColor(Color.gray)
-             */
-             
+                .font(.system(size: 35))
         }.aspectRatio(contentMode: .fit)
     }
 }
@@ -115,9 +91,6 @@ struct ContentView: View {
     var body: some View {
         HStack{
             Panels()
-            
-            
-            
         }.edgesIgnoringSafeArea(.all)
     }
 }

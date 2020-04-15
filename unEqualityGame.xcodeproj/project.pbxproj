@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520F925724476B1C00171D05 /* CreateMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F925624476B1C00171D05 /* CreateMatrix.swift */; };
 		52A5F0582441E49700B9A79F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5F0572441E49700B9A79F /* AppDelegate.swift */; };
 		52A5F05A2441E49700B9A79F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5F0592441E49700B9A79F /* SceneDelegate.swift */; };
 		52A5F05C2441E49700B9A79F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5F05B2441E49700B9A79F /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520F925624476B1C00171D05 /* CreateMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatrix.swift; sourceTree = "<group>"; };
 		52A5F0542441E49700B9A79F /* unEqualityGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unEqualityGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A5F0572441E49700B9A79F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52A5F0592441E49700B9A79F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				52A5F0572441E49700B9A79F /* AppDelegate.swift */,
 				52A5F0592441E49700B9A79F /* SceneDelegate.swift */,
 				52A5F05B2441E49700B9A79F /* ContentView.swift */,
+				520F925624476B1C00171D05 /* CreateMatrix.swift */,
 				52A5F05D2441E49A00B9A79F /* Assets.xcassets */,
 				52A5F0622441E49A00B9A79F /* LaunchScreen.storyboard */,
 				52A5F0652441E49A00B9A79F /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				52A5F0582441E49700B9A79F /* AppDelegate.swift in Sources */,
 				52A5F05A2441E49700B9A79F /* SceneDelegate.swift in Sources */,
+				520F925724476B1C00171D05 /* CreateMatrix.swift in Sources */,
 				52A5F05C2441E49700B9A79F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
